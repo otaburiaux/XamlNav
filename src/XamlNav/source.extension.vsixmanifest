@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+  <Metadata>
+    <Identity Id="XamlNav.7fb4211a-cf01-4c94-9256-9aa5a9de09e1" Version="1.0.0" Language="en-US" Publisher="Olivier Taburiaux" />
+    <DisplayName>XamlNav</DisplayName>
+    <Description xml:space="preserve">XAML navigation extension for Visual Studio: Ctrl+Click Go To Definition, Find All References, and Rename across C# and XAML.</Description>
+    <MoreInfo>https://github.com/otaburiaux/XamlNav</MoreInfo>
+    <License>LICENSE</License>
+    <Icon>Resources\Icon.png</Icon>
+    <Tags>xaml, navigation, binding, mvvm, go to definition, find references, rename, ctrl+click</Tags>
+  </Metadata>
+  <Installation>
+    <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[17.0, 19.0)">
+      <ProductArchitecture>amd64</ProductArchitecture>
+    </InstallationTarget>
+  </Installation>
+  <Dependencies>
+    <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
+  </Dependencies>
+  <Assets>
+    <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%|" />
+  </Assets>
+  <Prerequisites>
+    <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[17.0, 19.0)" DisplayName="Visual Studio Core Editor" />
+  </Prerequisites>
+</PackageManifest>

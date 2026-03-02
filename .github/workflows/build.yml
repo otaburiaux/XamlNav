@@ -1,0 +1,32 @@
+name: Build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Restore NuGet packages
+        run: msbuild XamlNav.sln /t:Restore
+
+      - name: Build (Release)
+        run: msbuild XamlNav.sln /t:Build /p:Configuration=Release /p:DeployExtension=false
+
+      - name: Run tests
+        run: dotnet test tests/XamlNav.Tests/XamlNav.Tests.csproj --configuration Release
+
+      - name: Upload VSIX artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: XamlNav.vsix
+          path: src/XamlNav/bin/Release/XamlNav.vsix

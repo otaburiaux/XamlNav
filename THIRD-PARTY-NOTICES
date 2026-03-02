@@ -1,0 +1,33 @@
+THIRD-PARTY NOTICES
+===================
+
+This project uses third-party packages.
+
+This THIRD-PARTY NOTICES file is provided for informational purposes only.
+
+-------------------------------------------------------------------------------
+Package                                    Version        License
+-------------------------------------------------------------------------------
+Microsoft.VisualStudio.SDK                 17.14.40265    MS VS Add-ons & Extensions
+  https://www.nuget.org/packages/Microsoft.VisualStudio.SDK/17.14.40265
+  https://visualstudio.microsoft.com/license-terms/vs2026-ga-addons-extensions/
+
+Microsoft.VSSDK.BuildTools                 17.14.2094     MS VS Add-ons & Extensions
+  https://www.nuget.org/packages/Microsoft.VSSDK.BuildTools/17.14.2094
+  https://visualstudio.microsoft.com/license-terms/vs2026-ga-addons-extensions/
+
+Microsoft.CodeAnalysis.CSharp             4.8.0          MIT
+  https://www.nuget.org/packages/Microsoft.CodeAnalysis.CSharp/4.8.0
+  https://github.com/dotnet/roslyn/blob/main/License.txt
+
+Microsoft.CodeAnalysis.Workspaces.Common  4.8.0          MIT
+  https://www.nuget.org/packages/Microsoft.CodeAnalysis.Workspaces.Common/4.8.0
+  https://github.com/dotnet/roslyn/blob/main/License.txt
+
+Microsoft.VisualStudio.LanguageServices   4.8.0          MIT
+  https://www.nuget.org/packages/Microsoft.VisualStudio.LanguageServices/4.8.0
+  https://github.com/dotnet/roslyn/blob/main/License.txt
+
+-------------------------------------------------------------------------------
+END OF THIRD-PARTY NOTICES
+-------------------------------------------------------------------------------

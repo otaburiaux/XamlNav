@@ -1,0 +1,17 @@
+root = true
+
+[*]
+indent_style = space
+indent_size = 4
+
+[*.cs]
+indent_style = space
+indent_size = 4
+
+[*.{xml,vsixmanifest,vsct,csproj,props,targets}]
+indent_style = space
+indent_size = 2
+
+[*.xaml]
+indent_style = space
+indent_size = 4

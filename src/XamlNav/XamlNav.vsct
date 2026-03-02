@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  
+  <Extern href="stdidcmd.h"/>
+  <Extern href="vsshlids.h"/>
+  <Extern href="KnownImageIds.vsct"/>
+
+  <Commands package="guidXamlNavPackage">
+    
+    <!-- Groups -->
+    <Groups>
+      <!-- Extensions menu submenu group -->
+      <Group guid="guidXamlNavCmdSet" id="XamlNavMenuGroup" priority="0x0600">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_EXTENSIONS"/>
+      </Group>
+      
+      <!-- Submenu contents group -->
+      <Group guid="guidXamlNavCmdSet" id="XamlNavSubMenuGroup" priority="0x0000">
+        <Parent guid="guidXamlNavCmdSet" id="XamlNavSubMenu"/>
+      </Group>
+      
+      <!-- XAML Editor context menu groups -->
+      <Group guid="guidXamlNavCmdSet" id="XamlEditorNavigationGroup" priority="0x0210">
+        <Parent guid="guidXamlEditorContextMenu" id="IDM_XAML_EDITOR"/>
+      </Group>
+      
+      <Group guid="guidXamlNavCmdSet" id="XamlEditorContextMenuGroup" priority="0x0600">
+        <Parent guid="guidXamlEditorContextMenu" id="IDM_XAML_EDITOR"/>
+      </Group>
+
+    </Groups>
+
+    <!-- Menus (Submenus) -->
+    <Menus>
+      <Menu guid="guidXamlNavCmdSet" id="XamlNavSubMenu" priority="0x0100" type="Menu">
+        <Parent guid="guidXamlNavCmdSet" id="XamlNavMenuGroup"/>
+        <Strings>
+          <ButtonText>XamlNav</ButtonText>
+        </Strings>
+      </Menu>
+    </Menus>
+
+    <!-- Buttons (Commands) -->
+    <Buttons>
+      <!-- Restart XAML Designer - Main Menu -->
+      <Button guid="guidXamlNavCmdSet" id="RestartDesignerCommandId" priority="0x0200" type="Button">
+        <Parent guid="guidXamlNavCmdSet" id="XamlNavSubMenuGroup"/>
+        <Strings>
+          <ButtonText>Restart XAML Designer</ButtonText>
+          <ToolTipText>Kill the XAML Designer process to restart it</ToolTipText>
+        </Strings>
+      </Button>
+      
+      <!-- Restart XAML Designer - XAML Context Menu -->
+      <Button guid="guidXamlNavCmdSet" id="RestartDesignerContextCommandId" priority="0x0110" type="Button">
+        <Parent guid="guidXamlNavCmdSet" id="XamlEditorNavigationGroup"/>
+        <Strings>
+          <ButtonText>Restart XAML Designer</ButtonText>
+        </Strings>
+      </Button>
+ 
+      <!-- Find All References (with XAML) - Extensions Menu -->
+      <Button guid="guidXamlNavCmdSet" id="FindXamlReferencesCommandId" priority="0x0100" type="Button">
+        <Parent guid="guidXamlNavCmdSet" id="XamlNavSubMenuGroup"/>
+        <Strings>
+          <ButtonText>Find All References (with XAML)</ButtonText>
+          <CommandName>XamlNav.FindAllReferencesWithXaml</CommandName>
+          <ToolTipText>Find all references in code and also in XAML bindings</ToolTipText>
+        </Strings>
+      </Button>
+
+      <!-- Rename (with XAML) - Extensions Menu -->
+      <Button guid="guidXamlNavCmdSet" id="RenameWithXamlCommandId" priority="0x0150" type="Button">
+        <Parent guid="guidXamlNavCmdSet" id="XamlNavSubMenuGroup"/>
+        <Icon guid="ImageCatalogGuid" id="Rename" />
+        <CommandFlag>IconIsMoniker</CommandFlag>
+        <Strings>
+          <ButtonText>Rename (with XAML)</ButtonText>
+          <CommandName>XamlNav.RenameWithXaml</CommandName>
+          <ToolTipText>Rename symbol in code and update all XAML binding references</ToolTipText>
+        </Strings>
+      </Button>
+
+      <!-- Settings - Extensions Menu -->
+      <Button guid="guidXamlNavCmdSet" id="OpenSettingsCommandId" priority="0x0900" type="Button">
+        <Parent guid="guidXamlNavCmdSet" id="XamlNavSubMenuGroup"/>
+        <Icon guid="ImageCatalogGuid" id="Settings" />
+        <CommandFlag>IconIsMoniker</CommandFlag>
+        <Strings>
+          <ButtonText>Settings</ButtonText>
+          <ToolTipText>Open XamlNav extension settings</ToolTipText>
+        </Strings>
+      </Button>
+    </Buttons>
+
+    
+  </Commands>
+
+  <CommandPlacements>
+    <!-- Code Editor Context Menu Placement - Navigation Group -->
+    <CommandPlacement guid="guidXamlNavCmdSet" id="FindXamlReferencesCommandId" priority="0x0401">
+      <Parent guid="guidSHLMainMenu" id="IDG_VS_CODEWIN_NAVIGATETOLOCATION"/>
+    </CommandPlacement>
+
+    <!-- XAML Editor Context Menu Placement -->
+    <CommandPlacement guid="guidXamlNavCmdSet" id="FindXamlReferencesCommandId" priority="0x0100">
+      <Parent guid="guidXamlNavCmdSet" id="XamlEditorNavigationGroup"/>
+    </CommandPlacement>
+
+    <!-- Rename (with XAML) - Code Editor Context Menu -->
+    <CommandPlacement guid="guidXamlNavCmdSet" id="RenameWithXamlCommandId" priority="0x0402">
+      <Parent guid="guidSHLMainMenu" id="IDG_VS_CODEWIN_NAVIGATETOLOCATION"/>
+    </CommandPlacement>
+
+    <!-- Rename (with XAML) - XAML Editor Context Menu -->
+    <CommandPlacement guid="guidXamlNavCmdSet" id="RenameWithXamlCommandId" priority="0x0101">
+      <Parent guid="guidXamlNavCmdSet" id="XamlEditorNavigationGroup"/>
+    </CommandPlacement>
+  </CommandPlacements>
+
+  <Symbols>
+    <!-- Standard VS command group (global scope for key bindings) -->
+    <GuidSymbol name="guidVSStd97" value="{5efc7975-14bc-11cf-9b2b-00aa00573819}" />
+    <GuidSymbol name="guidXamlNavPackage" value="{fe683998-c5bb-4103-b29f-a150ce0a6356}" />
+    
+    <GuidSymbol name="guidXamlNavCmdSet" value="{85e5d978-f416-4516-bb76-d473f6f43025}">
+      <IDSymbol name="XamlNavMenuGroup" value="0x1020" />
+      <IDSymbol name="XamlNavSubMenu" value="0x1100" />
+      <IDSymbol name="XamlNavSubMenuGroup" value="0x1150" />
+      <IDSymbol name="XamlEditorNavigationGroup" value="0x1180" />
+      <IDSymbol name="XamlEditorContextMenuGroup" value="0x1200" />
+      <IDSymbol name="RestartDesignerCommandId" value="0x0100" />
+      <IDSymbol name="RestartDesignerContextCommandId" value="0x0101" />
+      <IDSymbol name="FindXamlReferencesCommandId" value="0x0200" />
+      <IDSymbol name="RenameWithXamlCommandId" value="0x0300" />
+      <IDSymbol name="OpenSettingsCommandId" value="0x0400" />
+    </GuidSymbol>
+    
+    <!-- Standard Visual Studio Main Menu -->
+    <GuidSymbol name="guidSHLMainMenu" value="{d309f791-903f-11d0-9efc-00a0c911004f}">
+      <IDSymbol name="IDM_VS_MENU_EXTENSIONS" value="0x0091" />
+      <IDSymbol name="IDM_VS_CTXT_CODEWIN" value="0x040D" />
+      <IDSymbol name="IDG_VS_CODEWIN_NAVIGATETOLOCATION" value="0x02B1" />
+    </GuidSymbol>
+    
+    <!-- XAML Editor context menu -->
+    <GuidSymbol name="guidXamlEditorContextMenu" value="{4c87b692-1202-46aa-b64c-ef01faec53da}">
+      <IDSymbol name="IDM_XAML_EDITOR" value="0x103" />
+    </GuidSymbol>
+    
+  </Symbols>
+  
+</CommandTable>
